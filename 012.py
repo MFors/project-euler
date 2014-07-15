@@ -95,7 +95,7 @@ def factors(n):
     return result
 
 
-# 28 had 6 divisors and is the 7th triangle numbers
+# 28 had 6 divisors and is the 7th triangle number
 triangle = TriangleChain(7)
 while 1:
     if factors(triangle.next()) > 500:
