@@ -28,7 +28,7 @@ Mikael Fors 2014
 # subarray (O(n)) kn times (O(n)).
 
 import operator as op
-with open('8.data', 'r') as raw:
+with open('008.data', 'r') as raw:
     data, maximum = map(int, (c for c in raw.read())), 0
     for i in xrange(len(data) - 13):
         maximum = max(maximum, reduce(op.mul, data[i:i+13]))
