@@ -7,8 +7,6 @@ Mikael Fors 2014
  divisors?"
 '''
 
-import math
-
 class TriangleChain(object):
     def __init__(self, n=0):
         self.value = 1 if not n else sum((xrange(1, n + 1)))
