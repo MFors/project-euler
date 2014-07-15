@@ -6,7 +6,7 @@ Mikael Fors 2014
 "Find the maximum total from top to bottom of the triangle"
 '''
 
-with open('18.data', 'r') as raw:
+with open('018.data', 'r') as raw:
     data = raw.read().split('\n')
     data = [map(int, row.split()) for row in data if len(row)]
 
