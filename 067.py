@@ -7,7 +7,7 @@ Mikael Fors 2014
  containing a triangle with one-hundred rows."
 '''
 
-with open('67.data', 'r') as raw:
+with open('067.data', 'r') as raw:
     data = raw.read().split('\n')
     data = [map(int, row.split()) for row in data if len(row)]
 
