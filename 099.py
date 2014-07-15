@@ -3,8 +3,9 @@ ProjectEuler Problem 99
 
 Mikael Fors 2014
 
-"How many digit factorial chains, with a starting number below one million,
- contain exactly sixty non-repeating terms?"
+"Using base_exp.txt, a 22K text file containing one thousand lines with a
+ base/exponent pair on each line, determine which line number has the greatest
+ numerical value."
 '''
 
 import math
