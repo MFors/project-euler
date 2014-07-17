@@ -17,7 +17,7 @@ palindromes = [0] + range(1, 10, 2)
 for k in xrange(10, 1000):
     m = 10 ** len(str(k))
 
-    # Dual digit are a special case, e.g. 33 which is otherwise missed
+    # Dual digits is a special case, e.g. 33 which is otherwise missed
     if k < 100 and k // 10 == k % 10 and bin(k)[2:] == bin(k)[2:][::-1]:
         palindromes.append(k)
 
