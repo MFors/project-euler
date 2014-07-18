@@ -1,3 +1,3 @@
 project-euler
 =============
-Some solutions to project euler in python
+Some solutions to Project Euler in Python and C++.
