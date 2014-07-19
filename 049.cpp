@@ -95,8 +95,8 @@ void permutationPrimeSequence() {
 
         // make the key from occurances
         k = 1;
-        for(int i2 = 0; i2 < 10; ++i2) {
-            k *= int(pow(primes[i2], int(key[i2])));
+        for(int m = 0; m < 10; ++m) {
+            k *= pow(primes[m], key[m]);
         }
 
         frequency[k].push_back(primes[i]);
