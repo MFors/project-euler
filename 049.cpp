@@ -122,7 +122,7 @@ void permutationPrimeSequence() {
                     break;
 
                 vector<int>::iterator match = find(
-                     start + 1,
+                     end + 1,
                      bucket->second.end(),
                      (*end << 1) - *start
                 );
