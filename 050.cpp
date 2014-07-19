@@ -94,9 +94,7 @@ int sumOfLongestPrimeSumUnder(int n) {
         if(primeCache.find(current.value) != primeCache.end()) {
             return current.value;
         } else {
-
-            // We need to keep current.value positive otherwise we can loop
-            // forever...
+            // Sum needs at least two consecutive primes
             if(current.first + 1 >= current.last)
                 continue;
 
