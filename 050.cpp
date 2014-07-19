@@ -115,6 +115,6 @@ int sumOfLongestPrimeSumUnder(int n) {
 }
 
 int main() {
-    cout << "The answer is: " << sumOfLongestPrimeSumUnder(1000*1000) << endl;
+    cout << "The answer is: " << sumOfLongestPrimeSumUnder(1000 * 1000) << endl;
     return 0;
 }
