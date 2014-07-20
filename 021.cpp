@@ -12,7 +12,6 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-#include <map>
 #include <boost/dynamic_bitset.hpp>
 
 /* Maybe should make separate helper lib... */
