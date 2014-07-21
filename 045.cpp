@@ -26,8 +26,8 @@ int main() {
         r_0 = (1 + sqrt(1 + 24m)) / 6
         r_1 = (1 - sqrt(1 + 24m)) / 6
 
-        This means that sqrt(1 + 24m) must be congruent to -1 or 5 modulo 6.
-        Further, recall that x is a prefect square modulo n if there exists
+        This means that sqrt(1 + 24m) must be congruent to -1 = 5 modulo 6.
+        Further, recall that x is a perfect square modulo n if there exists
         a y such that y^2 = x mod n and that xy mod n is the same as (x mod n)
         times (y mod n) mod n.
 
@@ -37,7 +37,7 @@ int main() {
         to 5 * 5 mod 6 = 25 mod 6 = 1. But, as previously stated, this also means
         that 1 + 24m is a perfect square!
 
-        The case is clear: That m is a pentagonal means two things:
+        The case is clear: that m is a pentagonal means two things:
 
         (i)     1 + 24m is a perfect square
         (ii)    sqrt(1 + 24m) is congruent to 5 mod 6
