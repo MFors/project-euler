@@ -43,7 +43,7 @@ int main() {
         (ii)    sqrt(1 + 24m) is congruent to 5 mod 6
 
         As r_1 hints, if sqrt(1 + 24m) = 1 mod 6, we get r_1 = 0 mod 6 which
-        is no difference from r_0 if sqrt(1 + 24m) is 5 mod 6, i.e. both roots
+        is no different from r_0 if sqrt(1 + 24m) is 5 mod 6, i.e. both roots
         will yield a value that is congruent to 0 mod 6.
 
     */
