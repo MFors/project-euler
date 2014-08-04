@@ -15,13 +15,7 @@
     Brute force since we can restrict the loops quite a bit.
     Dupes avoided by using hashmap.
 
-    Yes, the pandigitalProducts function is ugly and yes we could
-    for-loop the while to remove duplicate code, but where is the
-    fun in that?
-
-    Runs in 10ms for me, pretty okay. Could get more speed by bailing
-    on clearly false candidate j-values, i.e. those with 0 not in last
-    digit but somewhere else.
+    Runs in 3ms for me, pretty okay.
 
 */
 
@@ -43,8 +37,9 @@ std::vector<long> pandigitalProducts() {
   std::unordered_map<long, bool> productMap;
   std::vector<long> result;
 
-  int product = 0, temp = 0, digitCount = 0;
+  int product = 0, temp = 0, digitCount = 0, over = 0;
   long concatNumber = 0;
+  bool firstRun = true, thirdRun = false;
 
   // i x j, where j > i, it follows that i is max 79 as
   // 79 * 123 = 9717  (concatenated length 9)
@@ -53,44 +48,36 @@ std::vector<long> pandigitalProducts() {
     if (!(i % 10)) // cannot have 0
       continue;
     for (int j = i + 1; ;++j) {
-      if (!(i % 10)) // cannot have 0 (still allow x0y form...)
-        continue;
-
       temp = j;
       product = i * j;
       concatNumber = i;
       digitCount = 0;
 
-      // Concatenate the numbers
+      // Concatenate the numbers and count length
+      firstRun = true, thirdRun = false;
       while (temp) {
-        concatNumber *= 10;
-        concatNumber += temp % 10;
+        if (!thirdRun) {
+          over = temp % 10;
+          if (!over)
+            break; // A zero means it is not pandigital
+          concatNumber *= 10;
+          concatNumber += over;
+        }
         temp /= 10;
         ++digitCount;
-      }
-      temp = product;
-      while (temp) {
-        concatNumber *= 10;
-        concatNumber += temp % 10;
-        temp /= 10;
-        ++digitCount;
+        if (firstRun && !temp) {
+          temp = product;
+          firstRun = false;
+        } else if (!temp && !thirdRun && !firstRun) {
+          temp = i;
+          thirdRun = true;
+        }
       }
 
-      // Still need to find the length of i, so yet another loop! :)
-      temp = i;
-      while (temp) {
-        temp /= 10;
-        ++digitCount;
-      }
-
-      if (digitCount < 9)
-        continue;
       if (digitCount > 9)
         break;
-
-      if (!isPandigital(concatNumber))
+      if (digitCount < 9 || !isPandigital(concatNumber))
         continue;
-
       productMap[product] = true;
     }
   }
